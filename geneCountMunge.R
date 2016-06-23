@@ -1,10 +1,10 @@
-# Invoke by 'Rscript geneCountMunge.R --args path_to_file path_to_destination'
+# Invoke by 'Rscript geneCountMunge.R path_to_file path_to_destination'
 # Writes the voomified output to path_to_destination as a space-seperated table.
 
 library(limma)
 
-filename <- commandArgs(trailingOnly = T)[2]
-destination <- commandArgs(trailingOnly = T)[3]
+filename <- commandArgs(trailingOnly = T)[1]
+destination <- commandArgs(trailingOnly = T)[2]
 gene_data <- read.table(filename, header=T)
 gene_colnames <- colnames(gene_data)
 
